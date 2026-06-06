@@ -16,7 +16,7 @@ export const generateImageMock = (taskId, prompt) => {
             taskId,
             status: 'queued',
             progress: 10,
-            message: 'Queued in generation server.'
+            message: '[AetherGen Server] Initializing model parameters & allocating GPU VRAM...'
         });
 
         // Step 2: Processing (Denoising)
@@ -25,7 +25,7 @@ export const generateImageMock = (taskId, prompt) => {
                 taskId,
                 status: 'processing',
                 progress: 40,
-                message: 'Running diffusion denoising steps (12/30)...'
+                message: '[Diffusion Engine] Executing denoising scheduler steps (25/50)...'
             });
 
             // Step 3: Detailing & Upscaling
@@ -34,7 +34,7 @@ export const generateImageMock = (taskId, prompt) => {
                     taskId,
                     status: 'processing',
                     progress: 80,
-                    message: 'Enhancing facial features and upscaling resolution...'
+                    message: '[Upscaler Engine] Injecting detailing passes & upscaling canvas to 4K...'
                 });
 
                 // Step 4: Complete
@@ -43,7 +43,7 @@ export const generateImageMock = (taskId, prompt) => {
                         taskId,
                         status: 'completed',
                         progress: 100,
-                        message: 'Success',
+                        message: '[AetherGen Studio] Synthesis completed. Compiled image assets ready.',
                         resultUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80'
                     });
                     console.log(`[ImageService] Finished background image generation for taskId: ${taskId}`);
